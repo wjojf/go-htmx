@@ -1,0 +1,37 @@
+{{ block "index" . }}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="https://unpkg.com/htmx.org/dist/htmx.min.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", (event) => {
+                document.body.addEventListener('htmx:beforeSwap', function(evt) {
+                    if (evt.detail.xhr.status === 422 || evt.detail.xhr.status === 409) {
+                        // allow 422 responses to swap as we are using this as a signal that
+                        // a form was submitted with bad data and want to rerender with the
+                        // errors
+                        //
+                        // set isError to false to avoid error logging in console
+                        evt.detail.shouldSwap = true;
+                        evt.detail.isError = false;
+                    }
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <form hx-post="/contacts" class="contact-form">
+            {{ template "create-contact-form" .Form }}
+        </form>
+        <hr />
+        <div class="contacts-list">
+            {{ template "contact-list" .Contacts }}
+        </div>
+    </body>
+</html>
+{{ end }}
+

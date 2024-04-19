@@ -3,10 +3,10 @@ package server
 import (
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
-	"github.com/wjojf/go-htmx/transport/handlers"
-	"github.com/wjojf/go-htmx/transport/handlers/contacts"
-	"github.com/wjojf/go-htmx/transport/handlers/counter"
-	"github.com/wjojf/go-htmx/transport/template"
+	"github.com/wjojf/go-htmx/pkg/handlers"
+	"github.com/wjojf/go-htmx/pkg/handlers/contacts"
+	"github.com/wjojf/go-htmx/pkg/handlers/counter"
+	"github.com/wjojf/go-htmx/pkg/template"
 )
 
 func New() *echo.Echo {

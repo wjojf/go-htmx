@@ -2,7 +2,7 @@ package counter
 
 import (
 	"github.com/labstack/echo/v4"
-	"github.com/wjojf/go-htmx/types"
+	"github.com/wjojf/go-htmx/pkg/types"
 )
 
 func Increment(c echo.Context) error {

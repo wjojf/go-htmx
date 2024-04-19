@@ -12,7 +12,7 @@ type Templates struct {
 
 func New() *Templates {
 	return &Templates{
-		templates: template.Must(template.ParseGlob("transport/views/*.html")),
+		templates: template.Must(template.ParseGlob("pkg/views/*.html")),
 	}
 }
 

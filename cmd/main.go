@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/wjojf/go-htmx/transport/server"
+	"github.com/wjojf/go-htmx/pkg/server"
 )
 
 func main() {
