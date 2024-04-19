@@ -1,11 +1,11 @@
-package update
+package counter
 
 import (
 	"github.com/labstack/echo/v4"
 	"github.com/wjojf/go-htmx/types"
 )
 
-func Handler(c echo.Context) error {
+func Increment(c echo.Context) error {
 	types.DefaultCounter.Count++
 	return c.Render(200, "count", types.DefaultCounter)
 }

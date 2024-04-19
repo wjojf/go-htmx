@@ -1,0 +1,52 @@
+{{ block "contact-list" .}}
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ range .Contacts }}
+        <tr>
+            <td>{{ .Name }}</td>
+            <td>{{ .Email }}</td>
+            <td>
+                <a href="/contacts/">View</a>
+                <a href="/contacts/edit">Edit</a>
+                <a href="/contacts/delete">Delete</a>
+            </td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    tr:hover {
+        background-color: #f2f2f2;
+    }
+
+    th, td {
+        text-align: center;
+    }
+
+</style>
+
+{{ end }}
